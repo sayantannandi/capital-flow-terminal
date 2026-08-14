@@ -1,0 +1,94 @@
+name: Refresh Equity Market Structure
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Weekdays after the US market closes.
+    # GitHub schedules use UTC.
+    - cron: "23 22 * * 1-5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-equity-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Fetch equity market data
+        env:
+          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+        run: node scripts/fetch-equity.mjs
+
+      - name: Validate generated equity JSON
+        run: |
+          node -e "
+          const fs = require('fs');
+
+          const data = JSON.parse(
+            fs.readFileSync(
+              'public/data/equity-market.json',
+              'utf8'
+            )
+          );
+
+          if (!data.data) {
+            throw new Error('Missing data array');
+          }
+
+          if (data.data.length < 10) {
+            throw new Error(
+              'Insufficient equity data'
+            );
+          }
+
+          const spy =
+            data.data.find(
+              item =>
+                item.ticker === 'SPY'
+            );
+
+          if (!spy) {
+            throw new Error(
+              'SPY benchmark missing'
+            );
+          }
+
+          console.log(
+            'Validated',
+            data.data.length,
+            'ETF series'
+          );
+          "
+
+      - name: Commit updated equity data
+        run: |
+          git config user.name "capital-flow-bot"
+          git config user.email "capital-flow-bot@users.noreply.github.com"
+
+          git add public/data/equity-market.json
+
+          if git diff --cached --quiet; then
+            echo "No equity data changes."
+            exit 0
+          fi
+
+          git commit -m "data: refresh equity market structure"
+
+          git pull --rebase origin main
+
+          git push
