@@ -2,46 +2,340 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
   <title>Global Capital Flow Terminal</title>
+
   <style>
+    :root {
+      --bg: #071014;
+      --panel: #0c171c;
+      --panel2: #101e24;
+      --border: #1c3039;
+      --text: #e7eef2;
+      --muted: #8398a3;
+      --green: #50e3a4;
+      --red: #ff6978;
+      --amber: #f0b85a;
+      --blue: #5eb7ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #071014;
-      color: #e7eef2;
-      font-family: Arial, sans-serif;
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
     }
 
-    .terminal {
-      text-align: center;
+    header {
+      height: 64px;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--border);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: #081216;
     }
 
-    h1 {
-      color: #5ce1a4;
-      margin-bottom: 8px;
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
     }
 
     .status {
-      color: #8fa5b2;
+      color: var(--green);
+      font-size: 12px;
     }
 
-    .online {
-      color: #5ce1a4;
+    main {
+      max-width: 1500px;
+      margin: auto;
+      padding: 28px 24px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 11px;
+      letter-spacing: 0.13em;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 8px 0 4px;
+      font-size: clamp(28px, 4vw, 46px);
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 12px;
+    }
+
+    .section-head h2 {
+      font-size: 14px;
+      letter-spacing: 0.07em;
+      margin: 0;
+    }
+
+    #updated {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      min-height: 145px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .category {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .name {
+      margin-top: 8px;
+      color: #c9d6dc;
+      font-size: 13px;
+    }
+
+    .value {
+      margin-top: 18px;
+      font-size: 26px;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 10px;
+
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .change.positive {
+      color: var(--green);
+    }
+
+    .change.negative {
+      color: var(--red);
+    }
+
+    .source {
+      margin-top: 25px;
+      padding: 13px 15px;
+
+      color: var(--muted);
+      font-size: 11px;
+
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .error {
+      color: var(--red);
+      padding: 20px;
+      border: 1px solid #552730;
     }
   </style>
 </head>
+
 <body>
-  <div class="terminal">
-    <h1>GLOBAL CAPITAL FLOW TERMINAL</h1>
-    <p>Global Macro + U.S. Equity Capital Rotation</p>
-    <p class="status">
-      SYSTEM STATUS:
-      <span class="online">● ONLINE</span>
-    </p>
-    <p>Version 1.0 — Infrastructure Test</p>
+
+<header>
+  <div class="brand">
+    GLOBAL CAPITAL FLOW TERMINAL
   </div>
+
+  <div class="status">
+    ● SYSTEM ONLINE
+  </div>
+</header>
+
+<main>
+
+  <div class="eyebrow">
+    GLOBAL MACRO + U.S. EQUITY ROTATION
+  </div>
+
+  <h1>Capital Flow Terminal</h1>
+
+  <div class="subtitle">
+    Tracking liquidity, rates, positioning and equity
+    capital rotation.
+  </div>
+
+
+  <section>
+
+    <div class="section-head">
+      <h2>MACRO & LIQUIDITY</h2>
+      <span id="updated">Loading...</span>
+    </div>
+
+    <div id="macro-grid" class="grid"></div>
+
+    <div class="source">
+      Source: Federal Reserve Economic Data (FRED).
+      Classification: MACRO.
+      Values display their individual observation date.
+    </div>
+
+  </section>
+
+</main>
+
+
+<script>
+async function loadMacro() {
+
+  const grid = document.getElementById("macro-grid");
+  const updated = document.getElementById("updated");
+
+  try {
+
+    const response = await fetch(
+      "/data/macro.json",
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+      throw new Error(
+        `HTTP ${response.status}`
+      );
+    }
+
+    const payload = await response.json();
+
+    updated.textContent =
+      "DATA GENERATED " +
+      new Date(payload.generatedAt)
+        .toLocaleString();
+
+    grid.innerHTML = "";
+
+    payload.data.forEach(series => {
+
+      if (series.status === "ERROR") {
+        return;
+      }
+
+      const direction =
+        series.change > 0
+          ? "positive"
+          : series.change < 0
+          ? "negative"
+          : "";
+
+      const sign =
+        series.change > 0
+          ? "+"
+          : "";
+
+      const card =
+        document.createElement("div");
+
+      card.className = "card";
+
+      card.innerHTML = `
+        <div class="category">
+          ${series.category}
+          · ${series.frequency}
+        </div>
+
+        <div class="name">
+          ${series.shortName}
+        </div>
+
+        <div class="value">
+          ${Number(series.latest)
+              .toLocaleString(undefined, {
+                maximumFractionDigits: 3
+              })}
+        </div>
+
+        <div class="meta">
+          <span>
+            ${series.units}
+          </span>
+
+          <span class="change ${direction}">
+            ${sign}${series.change ?? "—"}
+          </span>
+        </div>
+
+        <div class="meta">
+          <span>
+            ${series.id}
+          </span>
+
+          <span>
+            As of ${series.asOf}
+          </span>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+
+  } catch (error) {
+
+    console.error(error);
+
+    grid.innerHTML = `
+      <div class="error">
+        Unable to load macro data:
+        ${error.message}
+      </div>
+    `;
+
+    updated.textContent =
+      "DATA ERROR";
+  }
+}
+
+loadMacro();
+</script>
+
 </body>
 </html>
