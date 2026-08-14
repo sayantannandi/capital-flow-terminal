@@ -1,0 +1,69 @@
+name: Refresh FRED Macro Data
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Runs every day at 03:17 UTC
+    # = 08:47 India time
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-fred-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Fetch FRED data
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: node scripts/fetch-fred.mjs
+
+      - name: Validate generated JSON
+        run: |
+          node -e "
+          const fs = require('fs');
+          const data = JSON.parse(
+            fs.readFileSync('public/data/macro.json', 'utf8')
+          );
+
+          if (!data.data || !data.data.length) {
+            throw new Error('macro.json contains no series');
+          }
+
+          console.log(
+            'Validated',
+            data.data.length,
+            'macro series'
+          );
+          "
+
+      - name: Commit updated data
+        run: |
+          git config user.name "capital-flow-bot"
+          git config user.email "capital-flow-bot@users.noreply.github.com"
+
+          git add public/data/macro.json
+
+          if git diff --cached --quiet; then
+            echo "No FRED data changes."
+            exit 0
+          fi
+
+          git commit -m "data: refresh FRED macro snapshot"
+          git push
