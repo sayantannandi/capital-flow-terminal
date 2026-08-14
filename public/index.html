@@ -1,196 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
 
-  <title>Global Capital Flow Terminal</title>
+<title>Global Capital Flow Terminal</title>
 
-  <style>
-    :root {
-      --bg: #071014;
-      --panel: #0c171c;
-      --panel2: #101e24;
-      --border: #1c3039;
-      --text: #e7eef2;
-      --muted: #8398a3;
-      --green: #50e3a4;
-      --red: #ff6978;
-      --amber: #f0b85a;
-      --blue: #5eb7ff;
-    }
+<style>
 
-    * {
-      box-sizing: border-box;
-    }
+:root {
+  --bg: #050b0e;
+  --panel: #0a1419;
+  --panel2: #0d1a20;
+  --border: #172a33;
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-    }
+  --text: #edf3f5;
+  --muted: #7f949e;
 
-    header {
-      height: 64px;
-      padding: 0 24px;
-      border-bottom: 1px solid var(--border);
+  --green: #50e3a4;
+  --red: #ff6978;
+  --amber: #f0b85a;
+  --blue: #62b5ff;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  --header: #071115;
+}
 
-      background: #081216;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .brand {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-    }
+body {
+  margin: 0;
 
-    .status {
-      color: var(--green);
-      font-size: 12px;
-    }
+  background:
+    radial-gradient(
+      circle at top,
+      #0a171c 0,
+      #050b0e 420px
+    );
 
-    main {
-      max-width: 1500px;
-      margin: auto;
-      padding: 28px 24px;
-    }
+  color: var(--text);
 
-    .eyebrow {
-      color: var(--green);
-      font-size: 11px;
-      letter-spacing: 0.13em;
-      font-weight: 700;
-    }
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
 
-    h1 {
-      margin: 8px 0 4px;
-      font-size: clamp(28px, 4vw, 46px);
-      letter-spacing: -0.04em;
-    }
 
-    .subtitle {
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
+/* HEADER */
 
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+header {
+  min-height: 58px;
 
-      margin-bottom: 12px;
-    }
+  padding:
+    0 22px;
 
-    .section-head h2 {
-      font-size: 14px;
-      letter-spacing: 0.07em;
-      margin: 0;
-    }
+  border-bottom:
+    1px solid var(--border);
 
-    #updated {
-      color: var(--muted);
-      font-size: 11px;
-    }
+  background:
+    rgba(5, 13, 16, 0.95);
 
-    .grid {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-    }
+  display: flex;
 
-    .card {
-      min-height: 145px;
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--panel);
-    }
+  align-items: center;
 
-    .category {
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+  justify-content:
+    space-between;
 
-    .name {
-      margin-top: 8px;
-      color: #c9d6dc;
-      font-size: 13px;
-    }
+  position: sticky;
+  top: 0;
 
-    .value {
-      margin-top: 18px;
-      font-size: 26px;
-      font-weight: 650;
-      letter-spacing: -0.03em;
-    }
+  z-index: 50;
+}
 
-    .meta {
-      display: flex;
-      justify-content: space-between;
+.brand {
+  font-size: 13px;
+  font-weight: 800;
 
-      margin-top: 10px;
+  letter-spacing:
+    0.11em;
+}
 
-      font-size: 11px;
-      color: var(--muted);
-    }
+.system-status {
+  color: var(--green);
 
-    .change.positive {
-      color: var(--green);
-    }
+  font-size: 11px;
+  font-weight: 700;
+}
 
-    .change.negative {
-      color: var(--red);
-    }
 
-    .source {
-      margin-top: 25px;
-      padding: 13px 15px;
+/* LAYOUT */
 
-      color: var(--muted);
-      font-size: 11px;
+main {
+  max-width: 1500px;
 
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
+  margin: auto;
 
-    .error {
-      color: var(--red);
-      padding: 20px;
-      border: 1px solid #552730;
-    }
-  </style>
+  padding:
+    26px 22px 60px;
+}
+
+.eyebrow {
+  color: var(--green);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.14em;
+}
+
+h1 {
+  margin:
+    6px 0 4px;
+
+  font-size:
+    clamp(27px, 4vw, 43px);
+
+  letter-spacing:
+    -0.045em;
+}
+
+.subtitle {
+  color: var(--muted);
+
+  font-size: 13px;
+
+  margin-bottom: 28px;
+}
+
+
+/* LABELS */
+
+.label {
+  display: inline-block;
+
+  padding:
+    3px 6px;
+
+  border-radius: 3px;
+
+  font-size: 9px;
+
+  letter-spacing:
+    0.07em;
+
+  font-weight: 800;
+}
+
+.label.inferred {
+  color: #b9dfff;
+
+  background:
+    rgba(98, 181, 255, 0.12);
+
+  border:
+    1px solid
+    rgba(98, 181, 255, 0.22);
+}
+
+.label.macro {
+  color: #cdd7dc;
+
+  background:
+    rgba(200, 210, 220, 0.07);
+
+  border:
+    1px solid var(--border);
+}
+
+
+/* SECTION */
+
+section {
+  margin-bottom: 34px;
+}
+
+.section-head {
+  margin-bottom: 12px;
+
+  display: flex;
+
+  gap: 14px;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+}
+
+.section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.section-title h2 {
+  margin: 0;
+
+  font-size: 13px;
+
+  letter-spacing:
+    0.08em;
+}
+
+.timestamp {
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+
+/* CONTROLS */
+
+.controls {
+  margin:
+    0 0 15px;
+
+  display: flex;
+
+  gap: 5px;
+
+  flex-wrap: wrap;
+}
+
+.controls button {
+  cursor: pointer;
+
+  border:
+    1px solid var(--border);
+
+  background: var(--panel);
+
+  color: var(--muted);
+
+  padding:
+    7px 11px;
+
+  border-radius: 4px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.controls button.active {
+  background:
+    rgba(80, 227, 164, 0.11);
+
+  border-color:
+    rgba(80, 227, 164, 0.35);
+
+  color: var(--green);
+}
+
+
+/* MACRO CARDS */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    );
+
+  gap: 9px;
+}
+
+.card {
+  padding: 14px;
+
+  min-height: 125px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      160deg,
+      var(--panel),
+      #071115
+    );
+}
+
+.card-category {
+  color: var(--muted);
+
+  font-size: 9px;
+
+  letter-spacing:
+    0.08em;
+
+  text-transform:
+    uppercase;
+}
+
+.card-name {
+  margin-top: 6px;
+
+  font-size: 12px;
+
+  color: #c9d6db;
+}
+
+.card-value {
+  margin-top: 13px;
+
+  font-size: 23px;
+
+  font-weight: 700;
+}
+
+.meta {
+  margin-top: 8px;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  gap: 10px;
+
+  color: var(--muted);
+
+  font-size: 9px;
+}
+
+
+/* ROTATION LAYOUT */
+
+.rotation-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+}
+
+.rotation-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 6px;
+
+  background: var(--panel);
+
+  padding: 15px;
+}
+
+.rotation-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset:
+    auto 0 0 0;
+
+  height: 3px;
+
+  background:
+    var(--rotation-color);
+}
+
+.rot-head {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  gap: 10px;
+}
+
+.rot-name {
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.rot-ticker {
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+.rot-return {
+  margin-top: 16px;
+
+  font-size: 24px;
+
+  font-weight: 700;
+}
+
+.rot-details {
+  margin-top: 11px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap:
+    7px 12px;
+}
+
+.rot-stat-title {
+  color: var(--muted);
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+
+  letter-spacing:
+    0.07em;
+}
+
+.rot-stat-value {
+  margin-top: 2px;
+
+  font-size: 11px;
+}
+
+
+/* SECTOR HEATMAP */
+
+.sector-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 7px;
+}
+
+.sector {
+  min-height: 118px;
+
+  padding: 13px;
+
+  border-radius: 5px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.07);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    space-between;
+}
+
+.sector-top {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  gap: 6px;
+}
+
+.sector-name {
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.sector-ticker {
+  font-size: 9px;
+
+  opacity: 0.65;
+}
+
+.sector-return {
+  font-size: 21px;
+
+  font-weight: 750;
+}
+
+.sector-bottom {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  font-size: 9px;
+
+  opacity: 0.78;
+}
+
+
+/* BREADTH */
+
+.breadth {
+  margin-top: 9px;
+
+  padding: 13px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 5px;
+
+  background: var(--panel);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 10px;
+}
+
+.breadth-value {
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.breadth-title {
+  color: var(--muted);
+
+  margin-top: 3px;
+
+  font-size: 9px;
+}
+
+
+/* INFO */
+
+.info {
+  margin-top: 10px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 5px;
+
+  padding:
+    11px 13px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+.error {
+  color: var(--red);
+
+  padding: 14px;
+
+  border:
+    1px solid
+    rgba(255, 105, 120, 0.3);
+}
+
+
+/* COLORS */
+
+.positive {
+  color: var(--green);
+}
+
+.negative {
+  color: var(--red);
+}
+
+.neutral {
+  color: var(--muted);
+}
+
+
+/* MOBILE */
+
+@media (
+  max-width: 900px
+) {
+
+  .rotation-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .sector-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .breadth {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (
+  max-width: 520px
+) {
+
+  header {
+    padding:
+      0 13px;
+  }
+
+  main {
+    padding:
+      20px 13px 50px;
+  }
+
+  .sector-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
 <header>
+
   <div class="brand">
     GLOBAL CAPITAL FLOW TERMINAL
   </div>
 
-  <div class="status">
+  <div class="system-status">
     ● SYSTEM ONLINE
   </div>
+
 </header>
+
 
 <main>
 
@@ -198,27 +671,179 @@
     GLOBAL MACRO + U.S. EQUITY ROTATION
   </div>
 
-  <h1>Capital Flow Terminal</h1>
+  <h1>
+    Capital Flow Terminal
+  </h1>
 
   <div class="subtitle">
-    Tracking liquidity, rates, positioning and equity
-    capital rotation.
+    Tracking macro liquidity,
+    market structure and capital rotation.
   </div>
 
+
+  <!-- MACRO -->
 
   <section>
 
     <div class="section-head">
-      <h2>MACRO & LIQUIDITY</h2>
-      <span id="updated">Loading...</span>
+
+      <div class="section-title">
+
+        <h2>
+          MACRO & LIQUIDITY
+        </h2>
+
+        <span class="label macro">
+          MACRO
+        </span>
+
+      </div>
+
+      <div
+        id="macro-updated"
+        class="timestamp"
+      >
+        Loading...
+      </div>
+
     </div>
 
-    <div id="macro-grid" class="grid"></div>
+    <div
+      id="macro-grid"
+      class="grid"
+    ></div>
 
-    <div class="source">
-      Source: Federal Reserve Economic Data (FRED).
-      Classification: MACRO.
-      Values display their individual observation date.
+  </section>
+
+
+  <!-- EQUITY MARKET STRUCTURE -->
+
+  <section>
+
+    <div class="section-head">
+
+      <div class="section-title">
+
+        <h2>
+          EQUITY MARKET STRUCTURE
+        </h2>
+
+        <span class="label inferred">
+          INFERRED ROTATION
+        </span>
+
+      </div>
+
+      <div
+        id="equity-updated"
+        class="timestamp"
+      >
+        Loading...
+      </div>
+
+    </div>
+
+
+    <div
+      id="horizon-controls"
+      class="controls"
+    >
+
+      <button data-period="1D">
+        1D
+      </button>
+
+      <button data-period="5D">
+        5D
+      </button>
+
+      <button
+        data-period="20D"
+        class="active"
+      >
+        20D
+      </button>
+
+      <button data-period="60D">
+        60D
+      </button>
+
+    </div>
+
+
+    <h3
+      style="
+        font-size:11px;
+        color:#7f949e;
+        letter-spacing:.08em;
+      "
+    >
+      MARKET CAP ROTATION
+    </h3>
+
+    <div
+      id="market-cap-grid"
+      class="rotation-grid"
+    ></div>
+
+
+    <h3
+      style="
+        margin-top:24px;
+        font-size:11px;
+        color:#7f949e;
+        letter-spacing:.08em;
+      "
+    >
+      STYLE & BREADTH ROTATION
+    </h3>
+
+    <div
+      id="style-grid"
+      class="rotation-grid"
+    ></div>
+
+
+    <h3
+      style="
+        margin-top:24px;
+        font-size:11px;
+        color:#7f949e;
+        letter-spacing:.08em;
+      "
+    >
+      SECTOR ROTATION
+    </h3>
+
+    <div
+      id="sector-grid"
+      class="sector-grid"
+    ></div>
+
+
+    <div
+      id="breadth"
+      class="breadth"
+    ></div>
+
+
+    <div class="info">
+
+      Equity Market Structure V1 uses
+      daily ETF price, relative-strength,
+      trend and volume information.
+
+      <strong>
+        It does not represent confirmed
+        capital inflows or outflows.
+      </strong>
+
+      Classification:
+      INFERRED ROTATION.
+
+      Benchmark:
+      S&P 500 ETF (SPY).
+
     </div>
 
   </section>
@@ -227,115 +852,776 @@
 
 
 <script>
+
+let equityPayload = null;
+
+let currentPeriod =
+  "20D";
+
+
+function numberFormat(
+  value,
+  digits = 2
+) {
+
+  if (
+    value === null ||
+    value === undefined ||
+    !Number.isFinite(Number(value))
+  ) {
+    return "—";
+  }
+
+  return Number(value)
+    .toLocaleString(
+      undefined,
+      {
+        maximumFractionDigits:
+          digits
+      }
+    );
+}
+
+
+function pct(value) {
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return "—";
+  }
+
+  const number =
+    Number(value);
+
+  const sign =
+    number > 0
+      ? "+"
+      : "";
+
+  return (
+    sign +
+    number.toFixed(2) +
+    "%"
+  );
+}
+
+
+function directionClass(value) {
+
+  if (value > 0)
+    return "positive";
+
+  if (value < 0)
+    return "negative";
+
+  return "neutral";
+}
+
+
+function rotationColor(score) {
+
+  const intensity =
+    Math.min(
+      Math.abs(score) / 100,
+      1
+    );
+
+  if (score >= 0) {
+
+    return (
+      "rgba(80,227,164," +
+      (0.25 + intensity * 0.65) +
+      ")"
+    );
+  }
+
+  return (
+    "rgba(255,105,120," +
+    (0.25 + intensity * 0.65) +
+    ")"
+  );
+}
+
+
+function heatmapColor(
+  relative
+) {
+
+  const scaled =
+    Math.min(
+      Math.abs(relative) / 8,
+      1
+    );
+
+  if (relative >= 0) {
+
+    return (
+      "rgba(27,120,84," +
+      (0.18 + scaled * 0.62) +
+      ")"
+    );
+  }
+
+  return (
+    "rgba(142,45,55," +
+    (0.18 + scaled * 0.62) +
+    ")"
+  );
+}
+
+
+/* MACRO */
+
 async function loadMacro() {
 
-  const grid = document.getElementById("macro-grid");
-  const updated = document.getElementById("updated");
+  const grid =
+    document.getElementById(
+      "macro-grid"
+    );
+
+  const updated =
+    document.getElementById(
+      "macro-updated"
+    );
 
   try {
 
-    const response = await fetch(
-      "/data/macro.json",
-      { cache: "no-store" }
-    );
+    const response =
+      await fetch(
+        "/data/macro.json",
+        {
+          cache:
+            "no-store"
+        }
+      );
 
-    if (!response.ok) {
+    if (!response.ok)
       throw new Error(
         `HTTP ${response.status}`
       );
-    }
 
-    const payload = await response.json();
+    const payload =
+      await response.json();
 
     updated.textContent =
-      "DATA GENERATED " +
-      new Date(payload.generatedAt)
-        .toLocaleString();
+      "GENERATED " +
+      new Date(
+        payload.generatedAt
+      ).toLocaleString();
 
     grid.innerHTML = "";
 
-    payload.data.forEach(series => {
+    payload.data
+      .filter(
+        item =>
+          item.status !==
+          "ERROR"
+      )
+      .forEach(
+        series => {
 
-      if (series.status === "ERROR") {
-        return;
-      }
+          const card =
+            document.createElement(
+              "div"
+            );
 
-      const direction =
-        series.change > 0
-          ? "positive"
-          : series.change < 0
-          ? "negative"
-          : "";
+          card.className =
+            "card";
 
-      const sign =
-        series.change > 0
-          ? "+"
-          : "";
+          card.innerHTML = `
 
-      const card =
-        document.createElement("div");
+            <div class="card-category">
+              ${series.category}
+              ·
+              ${series.frequency}
+            </div>
 
-      card.className = "card";
+            <div class="card-name">
+              ${series.shortName}
+            </div>
 
-      card.innerHTML = `
-        <div class="category">
-          ${series.category}
-          · ${series.frequency}
-        </div>
+            <div class="card-value">
+              ${numberFormat(
+                series.latest,
+                3
+              )}
+            </div>
 
-        <div class="name">
-          ${series.shortName}
-        </div>
+            <div class="meta">
 
-        <div class="value">
-          ${Number(series.latest)
-              .toLocaleString(undefined, {
-                maximumFractionDigits: 3
-              })}
-        </div>
+              <span>
+                ${series.units}
+              </span>
 
-        <div class="meta">
-          <span>
-            ${series.units}
-          </span>
+              <span
+                class="${
+                  directionClass(
+                    series.change
+                  )
+                }"
+              >
+                ${
+                  numberFormat(
+                    series.change,
+                    3
+                  )
+                }
+              </span>
 
-          <span class="change ${direction}">
-            ${sign}${series.change ?? "—"}
-          </span>
-        </div>
+            </div>
 
-        <div class="meta">
-          <span>
-            ${series.id}
-          </span>
+            <div class="meta">
 
-          <span>
-            As of ${series.asOf}
-          </span>
-        </div>
-      `;
+              <span>
+                ${series.id}
+              </span>
 
-      grid.appendChild(card);
-    });
+              <span>
+                ${series.asOf}
+              </span>
+
+            </div>
+
+          `;
+
+          grid.appendChild(
+            card
+          );
+        }
+      );
 
   } catch (error) {
 
-    console.error(error);
-
-    grid.innerHTML = `
-      <div class="error">
-        Unable to load macro data:
+    grid.innerHTML =
+      `<div class="error">
+        Macro data unavailable:
         ${error.message}
-      </div>
-    `;
+      </div>`;
 
     updated.textContent =
       "DATA ERROR";
   }
 }
 
+
+/* ROTATION CARD */
+
+function rotationCard(
+  item
+) {
+
+  const currentReturn =
+    item.returns[
+      currentPeriod
+    ];
+
+  const relative =
+    item.relative[
+      currentPeriod
+    ];
+
+  const element =
+    document.createElement(
+      "div"
+    );
+
+  element.className =
+    "rotation-card";
+
+  element.style
+    .setProperty(
+      "--rotation-color",
+      rotationColor(
+        item.rotationScore
+      )
+    );
+
+  element.innerHTML = `
+
+    <div class="rot-head">
+
+      <div>
+
+        <div class="rot-name">
+          ${item.bucket}
+        </div>
+
+        <div class="rot-ticker">
+          ${item.ticker}
+        </div>
+
+      </div>
+
+      <div
+        class="${
+          directionClass(
+            item.rotationScore
+          )
+        }"
+        style="
+          font-size:12px;
+          font-weight:700;
+        "
+      >
+        ${item.rotationScore}
+      </div>
+
+    </div>
+
+    <div
+      class="
+        rot-return
+        ${
+          directionClass(
+            currentReturn
+          )
+        }
+      "
+    >
+      ${pct(
+        currentReturn
+      )}
+    </div>
+
+    <div class="rot-details">
+
+      <div>
+
+        <div class="rot-stat-title">
+          VS SPY
+        </div>
+
+        <div
+          class="
+            rot-stat-value
+            ${
+              directionClass(
+                relative
+              )
+            }
+          "
+        >
+          ${pct(relative)}
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="rot-stat-title">
+          SCORE
+        </div>
+
+        <div class="rot-stat-value">
+          ${item.rotationState}
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="rot-stat-title">
+          VS 50DMA
+        </div>
+
+        <div
+          class="
+            rot-stat-value
+            ${
+              directionClass(
+                item.trend
+                  .vs50DMA
+              )
+            }
+          "
+        >
+          ${pct(
+            item.trend
+              .vs50DMA
+          )}
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="rot-stat-title">
+          VOLUME
+        </div>
+
+        <div class="rot-stat-value">
+          ${
+            numberFormat(
+              item.volume
+                .ratio20D,
+              2
+            )
+          }x
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+  return element;
+}
+
+
+/* SECTOR */
+
+function sectorCard(
+  item
+) {
+
+  const currentReturn =
+    item.returns[
+      currentPeriod
+    ];
+
+  const relative =
+    item.relative[
+      currentPeriod
+    ];
+
+  const element =
+    document.createElement(
+      "div"
+    );
+
+  element.className =
+    "sector";
+
+  element.style.background =
+    heatmapColor(
+      relative
+    );
+
+  element.innerHTML = `
+
+    <div class="sector-top">
+
+      <div class="sector-name">
+        ${item.name}
+      </div>
+
+      <div class="sector-ticker">
+        ${item.ticker}
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="sector-return">
+        ${pct(
+          currentReturn
+        )}
+      </div>
+
+      <div class="sector-bottom">
+
+        <span>
+          RS ${pct(relative)}
+        </span>
+
+        <span>
+          CRS ${item.rotationScore}
+        </span>
+
+      </div>
+
+    </div>
+
+  `;
+
+  return element;
+}
+
+
+/* RENDER EQUITY */
+
+function renderEquity() {
+
+  if (!equityPayload)
+    return;
+
+  const marketCapGrid =
+    document.getElementById(
+      "market-cap-grid"
+    );
+
+  const styleGrid =
+    document.getElementById(
+      "style-grid"
+    );
+
+  const sectorGrid =
+    document.getElementById(
+      "sector-grid"
+    );
+
+  marketCapGrid.innerHTML =
+    "";
+
+  styleGrid.innerHTML =
+    "";
+
+  sectorGrid.innerHTML =
+    "";
+
+  const marketCaps =
+    equityPayload.data
+      .filter(
+        item =>
+          item.group ===
+          "marketCap"
+      );
+
+  const styles =
+    equityPayload.data
+      .filter(
+        item =>
+          item.group ===
+          "style"
+      );
+
+  const sectors =
+    equityPayload.data
+      .filter(
+        item =>
+          item.group ===
+          "sector"
+      )
+      .sort(
+        (a, b) =>
+          b.relative[
+            currentPeriod
+          ] -
+          a.relative[
+            currentPeriod
+          ]
+      );
+
+  marketCaps.forEach(
+    item =>
+      marketCapGrid
+        .appendChild(
+          rotationCard(item)
+        )
+  );
+
+  styles.forEach(
+    item =>
+      styleGrid
+        .appendChild(
+          rotationCard(item)
+        )
+  );
+
+  sectors.forEach(
+    item =>
+      sectorGrid
+        .appendChild(
+          sectorCard(item)
+        )
+  );
+
+
+  /* BREADTH */
+
+  const breadth =
+    equityPayload
+      .breadth[
+        currentPeriod
+      ];
+
+  document
+    .getElementById(
+      "breadth"
+    )
+    .innerHTML = `
+
+      <div>
+
+        <div class="breadth-value">
+          ${
+            breadth
+              .positiveSectors
+          } /
+          ${
+            breadth
+              .totalSectors
+          }
+        </div>
+
+        <div class="breadth-title">
+          SECTORS POSITIVE
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="breadth-value">
+          ${
+            breadth
+              .positivePct
+          }%
+        </div>
+
+        <div class="breadth-title">
+          POSITIVE BREADTH
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="breadth-value">
+          ${
+            breadth
+              .outperformingSPY
+          } /
+          ${
+            breadth
+              .totalSectors
+          }
+        </div>
+
+        <div class="breadth-title">
+          BEATING SPY
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="breadth-value">
+          ${
+            breadth
+              .outperformingPct
+          }%
+        </div>
+
+        <div class="breadth-title">
+          RELATIVE BREADTH
+        </div>
+
+      </div>
+
+    `;
+}
+
+
+/* LOAD EQUITY */
+
+async function loadEquity() {
+
+  const updated =
+    document.getElementById(
+      "equity-updated"
+    );
+
+  try {
+
+    const response =
+      await fetch(
+        "/data/equity-market.json",
+        {
+          cache:
+            "no-store"
+        }
+      );
+
+    if (!response.ok)
+      throw new Error(
+        `HTTP ${response.status}`
+      );
+
+    equityPayload =
+      await response.json();
+
+    updated.textContent =
+      "EOD · " +
+      new Date(
+        equityPayload.generatedAt
+      ).toLocaleString();
+
+    renderEquity();
+
+  } catch (error) {
+
+    document
+      .getElementById(
+        "market-cap-grid"
+      )
+      .innerHTML = `
+
+        <div class="error">
+          Equity data unavailable:
+          ${error.message}
+        </div>
+
+      `;
+
+    updated.textContent =
+      "DATA ERROR";
+  }
+}
+
+
+/* HORIZON BUTTONS */
+
+document
+  .querySelectorAll(
+    "#horizon-controls button"
+  )
+  .forEach(
+    button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          document
+            .querySelectorAll(
+              "#horizon-controls button"
+            )
+            .forEach(
+              item =>
+                item.classList
+                  .remove(
+                    "active"
+                  )
+            );
+
+          button.classList
+            .add(
+              "active"
+            );
+
+          currentPeriod =
+            button.dataset
+              .period;
+
+          renderEquity();
+        }
+      );
+
+    }
+  );
+
+
 loadMacro();
+
+loadEquity();
+
 </script>
 
 </body>
+
 </html>
