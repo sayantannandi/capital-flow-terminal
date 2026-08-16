@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-15T04:54:49.051Z",
+  "generatedAt": "2026-08-16T05:01:21.207Z",
   "terminal": "Global Capital Flow Terminal",
   "dataType": "macro",
   "classification": "MACRO",
@@ -1320,10 +1320,6 @@
       "change": 0,
       "pctChange": 0,
       "observations": [
-        {
-          "date": "2023-08-15",
-          "value": 5.33
-        },
         {
           "date": "2023-08-16",
           "value": 5.33
@@ -5720,10 +5716,6 @@
       "pctChange": -1.1905,
       "observations": [
         {
-          "date": "2023-08-15",
-          "value": 4.92
-        },
-        {
           "date": "2023-08-16",
           "value": 4.97
         },
@@ -8735,10 +8727,6 @@
       "pctChange": -1.0684,
       "observations": [
         {
-          "date": "2023-08-15",
-          "value": 4.21
-        },
-        {
           "date": "2023-08-16",
           "value": 4.28
         },
@@ -11749,10 +11737,6 @@
       "change": 0.03,
       "pctChange": 6.25,
       "observations": [
-        {
-          "date": "2023-08-15",
-          "value": -0.71
-        },
         {
           "date": "2023-08-16",
           "value": -0.69
@@ -14768,10 +14752,6 @@
       "change": -0.4464,
       "pctChange": -0.3735,
       "observations": [
-        {
-          "date": "2023-08-15",
-          "value": 120.2127
-        },
         {
           "date": "2023-08-16",
           "value": 120.3551
