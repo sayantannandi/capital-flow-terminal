@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-14T23:04:03.519Z",
+  "generatedAt": "2026-08-17T23:04:47.140Z",
   "terminal": "Global Capital Flow Terminal",
   "dataType": "equity-market-structure",
   "classification": "INFERRED ROTATION",
@@ -23,32 +23,32 @@
   "errors": [],
   "breadth": {
     "1D": {
-      "positiveSectors": 7,
+      "positiveSectors": 2,
       "totalSectors": 11,
-      "positivePct": 63.6,
-      "outperformingSPY": 8,
-      "outperformingPct": 72.7
+      "positivePct": 18.2,
+      "outperformingSPY": 5,
+      "outperformingPct": 45.5
     },
     "5D": {
-      "positiveSectors": 9,
+      "positiveSectors": 5,
       "totalSectors": 11,
-      "positivePct": 81.8,
-      "outperformingSPY": 9,
-      "outperformingPct": 81.8
+      "positivePct": 45.5,
+      "outperformingSPY": 5,
+      "outperformingPct": 45.5
     },
     "20D": {
-      "positiveSectors": 9,
-      "totalSectors": 11,
-      "positivePct": 81.8,
-      "outperformingSPY": 2,
-      "outperformingPct": 18.2
-    },
-    "60D": {
       "positiveSectors": 8,
       "totalSectors": 11,
       "positivePct": 72.7,
       "outperformingSPY": 5,
       "outperformingPct": 45.5
+    },
+    "60D": {
+      "positiveSectors": 7,
+      "totalSectors": 11,
+      "positivePct": 63.6,
+      "outperformingSPY": 6,
+      "outperformingPct": 54.5
     }
   },
   "data": [
@@ -60,34 +60,26 @@
       "benchmark": true,
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 776.34,
+      "asOf": "2026-08-17",
+      "close": 772.67,
       "returns": {
-        "1D": -0.198,
-        "5D": 0.398,
-        "20D": 4.446,
-        "60D": 5.807
+        "1D": -0.473,
+        "5D": -0.047,
+        "20D": 4.121,
+        "60D": 4.239
       },
       "trend": {
-        "sma20": 756.1965,
-        "sma50": 748.9264,
-        "vs20DMA": 2.664,
-        "vs50DMA": 3.66
+        "sma20": 757.7255,
+        "sma50": 749.238,
+        "vs20DMA": 1.972,
+        "vs50DMA": 3.127
       },
       "volume": {
-        "latest": 29084054,
-        "average20D": 48488458,
-        "ratio20D": 0.6
+        "latest": 32205964,
+        "average20D": 46924306,
+        "ratio20D": 0.686
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 738.47,
-          "high": 743.91,
-          "low": 735.47,
-          "close": 742.31,
-          "volume": 44200203
-        },
         {
           "date": "2026-05-14",
           "open": 743.65,
@@ -598,7 +590,15 @@
           "high": 778.8,
           "low": 775.4301,
           "close": 776.34,
-          "volume": 29084054
+          "volume": 31367913
+        },
+        {
+          "date": "2026-08-17",
+          "open": 776.18,
+          "high": 776.775,
+          "low": 772.51,
+          "close": 772.67,
+          "volume": 32205964
         }
       ],
       "relative": {
@@ -607,7 +607,7 @@
         "20D": 0,
         "60D": 0
       },
-      "rotationScore": 4,
+      "rotationScore": -2,
       "rotationState": "Neutral"
     },
     {
@@ -617,34 +617,26 @@
       "bucket": "Mid Cap",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 716.91,
+      "asOf": "2026-08-17",
+      "close": 715.35,
       "returns": {
-        "1D": 0.323,
-        "5D": 1.093,
-        "20D": 4.089,
-        "60D": 9.935
+        "1D": -0.218,
+        "5D": 1.184,
+        "20D": 4.684,
+        "60D": 7.664
       },
       "trend": {
-        "sma20": 697.6785,
-        "sma50": 692.9038,
-        "vs20DMA": 2.756,
-        "vs50DMA": 3.465
+        "sma20": 699.279,
+        "sma50": 693.4512,
+        "vs20DMA": 2.298,
+        "vs50DMA": 3.158
       },
       "volume": {
-        "latest": 413545,
-        "average20D": 600399,
-        "ratio20D": 0.689
+        "latest": 360169,
+        "average20D": 593817,
+        "ratio20D": 0.607
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 670.68,
-          "high": 670.68,
-          "low": 663.72,
-          "close": 667.42,
-          "volume": 695440
-        },
         {
           "date": "2026-05-14",
           "open": 670.53,
@@ -1155,16 +1147,24 @@
           "high": 717.35,
           "low": 712.57,
           "close": 716.91,
-          "volume": 413545
+          "volume": 440576
+        },
+        {
+          "date": "2026-08-17",
+          "open": 715.6,
+          "high": 716.62,
+          "low": 714.025,
+          "close": 715.35,
+          "volume": 360169
         }
       ],
       "relative": {
-        "1D": 0.521,
-        "5D": 0.695,
-        "20D": -0.357,
-        "60D": 4.128
+        "1D": 0.255,
+        "5D": 1.231,
+        "20D": 0.563,
+        "60D": 3.425
       },
-      "rotationScore": 17,
+      "rotationScore": 6,
       "rotationState": "Neutral"
     },
     {
@@ -1174,34 +1174,26 @@
       "bucket": "Small Cap",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 305.09,
+      "asOf": "2026-08-17",
+      "close": 304.06,
       "returns": {
-        "1D": 0.524,
-        "5D": 1.171,
-        "20D": 3.758,
-        "60D": 11.755
+        "1D": -0.338,
+        "5D": 1.36,
+        "20D": 4.02,
+        "60D": 8.643
       },
       "trend": {
-        "sma20": 296.716,
-        "sma50": 295.103,
-        "vs20DMA": 2.822,
-        "vs50DMA": 3.384
+        "sma20": 297.3035,
+        "sma50": 295.344,
+        "vs20DMA": 2.273,
+        "vs50DMA": 2.951
       },
       "volume": {
-        "latest": 12723732,
-        "average20D": 20789661,
-        "ratio20D": 0.612
+        "latest": 14168417,
+        "average20D": 20010902,
+        "ratio20D": 0.708
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 282.92,
-          "high": 283.56,
-          "low": 279.93,
-          "close": 282.67,
-          "volume": 20742270
-        },
         {
           "date": "2026-05-14",
           "open": 283.84,
@@ -1712,16 +1704,24 @@
           "high": 305.18,
           "low": 302.74,
           "close": 305.09,
-          "volume": 12723732
+          "volume": 13163356
+        },
+        {
+          "date": "2026-08-17",
+          "open": 303.96,
+          "high": 304.33,
+          "low": 303.23,
+          "close": 304.06,
+          "volume": 14168417
         }
       ],
       "relative": {
-        "1D": 0.722,
-        "5D": 0.773,
-        "20D": -0.688,
-        "60D": 5.948
+        "1D": 0.135,
+        "5D": 1.407,
+        "20D": -0.101,
+        "60D": 4.404
       },
-      "rotationScore": 13,
+      "rotationScore": 9,
       "rotationState": "Neutral"
     },
     {
@@ -1731,34 +1731,26 @@
       "bucket": "Growth",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 89.34,
+      "asOf": "2026-08-17",
+      "close": 88.87,
       "returns": {
-        "1D": -0.435,
-        "5D": -0.067,
-        "20D": 4.773,
-        "60D": 3.535
+        "1D": -0.526,
+        "5D": -0.348,
+        "20D": 4.149,
+        "60D": 1.682
       },
       "trend": {
-        "sma20": 86.567,
-        "sma50": 86.14,
-        "vs20DMA": 3.203,
-        "vs50DMA": 3.715
+        "sma20": 86.744,
+        "sma50": 86.1342,
+        "vs20DMA": 2.451,
+        "vs50DMA": 3.176
       },
       "volume": {
-        "latest": 5143237,
-        "average20D": 6772786,
-        "ratio20D": 0.759
+        "latest": 4519418,
+        "average20D": 6589499,
+        "ratio20D": 0.686
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 86.61,
-          "high": 87.8,
-          "low": 86.105,
-          "close": 87.51,
-          "volume": 5118989
-        },
         {
           "date": "2026-05-14",
           "open": 87.6,
@@ -2269,16 +2261,24 @@
           "high": 89.9,
           "low": 89.215,
           "close": 89.34,
-          "volume": 5143237
+          "volume": 5145743
+        },
+        {
+          "date": "2026-08-17",
+          "open": 89.43,
+          "high": 89.54,
+          "low": 88.815,
+          "close": 88.87,
+          "volume": 4519418
         }
       ],
       "relative": {
-        "1D": -0.237,
-        "5D": -0.465,
-        "20D": 0.327,
-        "60D": -2.272
+        "1D": -0.053,
+        "5D": -0.301,
+        "20D": 0.028,
+        "60D": -2.557
       },
-      "rotationScore": 12,
+      "rotationScore": -8,
       "rotationState": "Neutral"
     },
     {
@@ -2288,34 +2288,26 @@
       "bucket": "Value",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 227.51,
+      "asOf": "2026-08-17",
+      "close": 226.69,
       "returns": {
-        "1D": 0.203,
-        "5D": 1.427,
-        "20D": 4.401,
-        "60D": 9.866
+        "1D": -0.36,
+        "5D": 0.742,
+        "20D": 4.49,
+        "60D": 8.787
       },
       "trend": {
-        "sma20": 222.428,
-        "sma50": 219.3328,
-        "vs20DMA": 2.285,
-        "vs50DMA": 3.728
+        "sma20": 222.915,
+        "sma50": 219.5678,
+        "vs20DMA": 1.693,
+        "vs50DMA": 3.244
       },
       "volume": {
-        "latest": 2026394,
-        "average20D": 2896794,
-        "ratio20D": 0.7
+        "latest": 2457740,
+        "average20D": 2849665,
+        "ratio20D": 0.862
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 208.33,
-          "high": 208.675,
-          "low": 207.62,
-          "close": 208.37,
-          "volume": 1928836
-        },
         {
           "date": "2026-05-14",
           "open": 208.99,
@@ -2826,14 +2818,22 @@
           "high": 227.69,
           "low": 227,
           "close": 227.51,
-          "volume": 2026394
+          "volume": 2028157
+        },
+        {
+          "date": "2026-08-17",
+          "open": 227.1,
+          "high": 227.86,
+          "low": 226.61,
+          "close": 226.69,
+          "volume": 2457740
         }
       ],
       "relative": {
-        "1D": 0.401,
-        "5D": 1.029,
-        "20D": -0.045,
-        "60D": 4.059
+        "1D": 0.113,
+        "5D": 0.789,
+        "20D": 0.369,
+        "60D": 4.548
       },
       "rotationScore": 21,
       "rotationState": "Neutral"
@@ -2845,34 +2845,26 @@
       "bucket": "Equal Weight",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 222.77,
+      "asOf": "2026-08-17",
+      "close": 220.79,
       "returns": {
-        "1D": 0.018,
-        "5D": 1.218,
-        "20D": 4.405,
-        "60D": 10.49
+        "1D": -0.889,
+        "5D": 0.259,
+        "20D": 3.94,
+        "60D": 8.321
       },
       "trend": {
-        "sma20": 217.2795,
-        "sma50": 213.9374,
-        "vs20DMA": 2.527,
-        "vs50DMA": 4.129
+        "sma20": 217.698,
+        "sma50": 214.1366,
+        "vs20DMA": 1.42,
+        "vs50DMA": 3.107
       },
       "volume": {
-        "latest": 3808948,
-        "average20D": 8045545,
-        "ratio20D": 0.473
+        "latest": 5070413,
+        "average20D": 7627238,
+        "ratio20D": 0.665
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 203.68,
-          "high": 203.68,
-          "low": 202.335,
-          "close": 202.92,
-          "volume": 7388858
-        },
         {
           "date": "2026-05-14",
           "open": 203.46,
@@ -3383,16 +3375,24 @@
           "high": 222.96,
           "low": 222.33,
           "close": 222.77,
-          "volume": 3808948
+          "volume": 3810066
+        },
+        {
+          "date": "2026-08-17",
+          "open": 222.07,
+          "high": 222.21,
+          "low": 220.73,
+          "close": 220.79,
+          "volume": 5070413
         }
       ],
       "relative": {
-        "1D": 0.216,
-        "5D": 0.82,
-        "20D": -0.041,
-        "60D": 4.683
+        "1D": -0.416,
+        "5D": 0.306,
+        "20D": -0.181,
+        "60D": 4.082
       },
-      "rotationScore": 7,
+      "rotationScore": 6,
       "rotationState": "Neutral"
     },
     {
@@ -3402,34 +3402,26 @@
       "bucket": "Information Technology",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 190.01,
+      "asOf": "2026-08-17",
+      "close": 190.32,
       "returns": {
-        "1D": -0.398,
-        "5D": 1.085,
-        "20D": 8.212,
-        "60D": 9.68
+        "1D": 0.163,
+        "5D": 2.147,
+        "20D": 8.315,
+        "60D": 7.44
       },
       "trend": {
-        "sma20": 181.0165,
-        "sma50": 182.8188,
-        "vs20DMA": 4.968,
-        "vs50DMA": 3.934
+        "sma20": 181.747,
+        "sma50": 182.7618,
+        "vs20DMA": 4.717,
+        "vs50DMA": 4.136
       },
       "volume": {
-        "latest": 3615125,
-        "average20D": 8549876,
-        "ratio20D": 0.423
+        "latest": 6032871,
+        "average20D": 8129759,
+        "ratio20D": 0.742
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 177.27,
-          "high": 177.74,
-          "low": 174.26,
-          "close": 176.85,
-          "volume": 9817869
-        },
         {
           "date": "2026-05-14",
           "open": 177.36,
@@ -3940,16 +3932,24 @@
           "high": 191.35,
           "low": 189.25,
           "close": 190.01,
-          "volume": 3615125
+          "volume": 3634377
+        },
+        {
+          "date": "2026-08-17",
+          "open": 190.79,
+          "high": 191.75,
+          "low": 190.105,
+          "close": 190.32,
+          "volume": 6032871
         }
       ],
       "relative": {
-        "1D": -0.2,
-        "5D": 0.687,
-        "20D": 3.766,
-        "60D": 3.873
+        "1D": 0.636,
+        "5D": 2.194,
+        "20D": 4.194,
+        "60D": 3.201
       },
-      "rotationScore": 26,
+      "rotationScore": 38,
       "rotationState": "Leadership"
     },
     {
@@ -3959,34 +3959,26 @@
       "bucket": "Communication Services",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 112.95,
+      "asOf": "2026-08-17",
+      "close": 110.82,
       "returns": {
-        "1D": 0.355,
-        "5D": 1.528,
-        "20D": 2.079,
-        "60D": -2.503
+        "1D": -1.886,
+        "5D": -0.903,
+        "20D": 0.018,
+        "60D": -4.548
       },
       "trend": {
-        "sma20": 109.946,
-        "sma50": 110.071,
-        "vs20DMA": 2.732,
-        "vs50DMA": 2.616
+        "sma20": 109.947,
+        "sma50": 110.0252,
+        "vs20DMA": 0.794,
+        "vs50DMA": 0.722
       },
       "volume": {
-        "latest": 2969686,
-        "average20D": 5866065,
-        "ratio20D": 0.506
+        "latest": 3669646,
+        "average20D": 5631314,
+        "ratio20D": 0.652
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 115.522,
-          "high": 117.03,
-          "low": 115.35,
-          "close": 116.76,
-          "volume": 4061541
-        },
         {
           "date": "2026-05-14",
           "open": 117.1,
@@ -4497,16 +4489,24 @@
           "high": 113.5,
           "low": 112.645,
           "close": 112.95,
-          "volume": 2969686
+          "volume": 2982838
+        },
+        {
+          "date": "2026-08-17",
+          "open": 112.505,
+          "high": 112.57,
+          "low": 110.66,
+          "close": 110.82,
+          "volume": 3669646
         }
       ],
       "relative": {
-        "1D": 0.553,
-        "5D": 1.13,
-        "20D": -2.367,
-        "60D": -8.31
+        "1D": -1.413,
+        "5D": -0.856,
+        "20D": -4.103,
+        "60D": -8.787
       },
-      "rotationScore": -44,
+      "rotationScore": -56,
       "rotationState": "Lagging"
     },
     {
@@ -4516,34 +4516,26 @@
       "bucket": "Consumer Discretionary",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 118.2,
+      "asOf": "2026-08-17",
+      "close": 116.75,
       "returns": {
-        "1D": -0.211,
-        "5D": -1.385,
-        "20D": 2.391,
-        "60D": 2.756
+        "1D": -1.227,
+        "5D": -2.44,
+        "20D": 1.867,
+        "60D": -1.009
       },
       "trend": {
-        "sma20": 115.5815,
-        "sma50": 115.9738,
-        "vs20DMA": 2.266,
-        "vs50DMA": 1.92
+        "sma20": 115.6885,
+        "sma50": 115.9636,
+        "vs20DMA": 0.918,
+        "vs50DMA": 0.678
       },
       "volume": {
-        "latest": 3837190,
-        "average20D": 7409884,
-        "ratio20D": 0.518
+        "latest": 6865803,
+        "average20D": 7088090,
+        "ratio20D": 0.969
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 118.06,
-          "high": 119.23,
-          "low": 117.45,
-          "close": 118.72,
-          "volume": 4611751
-        },
         {
           "date": "2026-05-14",
           "open": 119.01,
@@ -5054,16 +5046,24 @@
           "high": 119.175,
           "low": 118.09,
           "close": 118.2,
-          "volume": 3837190
+          "volume": 3839277
+        },
+        {
+          "date": "2026-08-17",
+          "open": 117.96,
+          "high": 117.96,
+          "low": 116.4941,
+          "close": 116.75,
+          "volume": 6865803
         }
       ],
       "relative": {
-        "1D": -0.013,
-        "5D": -1.783,
-        "20D": -2.055,
-        "60D": -3.051
+        "1D": -0.754,
+        "5D": -2.393,
+        "20D": -2.254,
+        "60D": -5.248
       },
-      "rotationScore": -33,
+      "rotationScore": -27,
       "rotationState": "Lagging"
     },
     {
@@ -5073,34 +5073,26 @@
       "bucket": "Consumer Staples",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 86.09,
+      "asOf": "2026-08-17",
+      "close": 84.68,
       "returns": {
-        "1D": 0.105,
-        "5D": 1.14,
-        "20D": 1.056,
-        "60D": 0
+        "1D": -1.638,
+        "5D": -0.318,
+        "20D": -0.212,
+        "60D": -0.982
       },
       "trend": {
-        "sma20": 85.177,
-        "sma50": 84.5738,
-        "vs20DMA": 1.072,
-        "vs50DMA": 1.793
+        "sma20": 85.168,
+        "sma50": 84.6266,
+        "vs20DMA": -0.573,
+        "vs50DMA": 0.063
       },
       "volume": {
-        "latest": 6954120,
-        "average20D": 10708933,
-        "ratio20D": 0.649
+        "latest": 10461745,
+        "average20D": 10272827,
+        "ratio20D": 1.018
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 84.2,
-          "high": 85.255,
-          "low": 84.135,
-          "close": 84.72,
-          "volume": 10463186
-        },
         {
           "date": "2026-05-14",
           "open": 84.95,
@@ -5611,14 +5603,22 @@
           "high": 86.3,
           "low": 85.82,
           "close": 86.09,
-          "volume": 6954120
+          "volume": 6970193
+        },
+        {
+          "date": "2026-08-17",
+          "open": 85.36,
+          "high": 85.61,
+          "low": 84.59,
+          "close": 84.68,
+          "volume": 10461745
         }
       ],
       "relative": {
-        "1D": 0.303,
-        "5D": 0.742,
-        "20D": -3.39,
-        "60D": -5.807
+        "1D": -1.165,
+        "5D": -0.271,
+        "20D": -4.333,
+        "60D": -5.221
       },
       "rotationScore": -39,
       "rotationState": "Lagging"
@@ -5630,34 +5630,26 @@
       "bucket": "Financials",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 58.16,
+      "asOf": "2026-08-17",
+      "close": 57.58,
       "returns": {
-        "1D": -0.172,
-        "5D": 0.972,
-        "20D": 3.377,
-        "60D": 13.816
+        "1D": -0.997,
+        "5D": -0.398,
+        "20D": 2.748,
+        "60D": 11.46
       },
       "trend": {
-        "sma20": 57.203,
-        "sma50": 55.4596,
-        "vs20DMA": 1.673,
-        "vs50DMA": 4.869
+        "sma20": 57.28,
+        "sma50": 55.5674,
+        "vs20DMA": 0.524,
+        "vs50DMA": 3.622
       },
       "volume": {
-        "latest": 27459768,
-        "average20D": 30052980,
-        "ratio20D": 0.914
+        "latest": 45152073,
+        "average20D": 29315399,
+        "ratio20D": 1.54
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 51.14,
-          "high": 51.325,
-          "low": 50.955,
-          "close": 50.99,
-          "volume": 33440155
-        },
         {
           "date": "2026-05-14",
           "open": 51.27,
@@ -6168,16 +6160,24 @@
           "high": 58.29,
           "low": 58.06,
           "close": 58.16,
-          "volume": 27459768
+          "volume": 28130143
+        },
+        {
+          "date": "2026-08-17",
+          "open": 57.96,
+          "high": 58.265,
+          "low": 57.55,
+          "close": 57.58,
+          "volume": 45152073
         }
       ],
       "relative": {
-        "1D": 0.026,
-        "5D": 0.574,
-        "20D": -1.069,
-        "60D": 8.009
+        "1D": -0.524,
+        "5D": -0.351,
+        "20D": -1.373,
+        "60D": 7.221
       },
-      "rotationScore": 39,
+      "rotationScore": 37,
       "rotationState": "Leadership"
     },
     {
@@ -6187,34 +6187,26 @@
       "bucket": "Health Care",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 167.37,
+      "asOf": "2026-08-17",
+      "close": 167.05,
       "returns": {
-        "1D": -0.6,
-        "5D": 1.02,
-        "20D": 3.898,
-        "60D": 13.61
+        "1D": -0.191,
+        "5D": -0.825,
+        "20D": 4.898,
+        "60D": 13.539
       },
       "trend": {
-        "sma20": 164.259,
-        "sma50": 159.8202,
-        "vs20DMA": 1.894,
-        "vs50DMA": 4.724
+        "sma20": 164.649,
+        "sma50": 160.1196,
+        "vs20DMA": 1.458,
+        "vs50DMA": 4.328
       },
       "volume": {
-        "latest": 5002289,
-        "average20D": 9148126,
-        "ratio20D": 0.547
+        "latest": 7099819,
+        "average20D": 8940992,
+        "ratio20D": 0.794
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 145.32,
-          "high": 146.975,
-          "low": 145.13,
-          "close": 146.71,
-          "volume": 15841774
-        },
         {
           "date": "2026-05-14",
           "open": 146.85,
@@ -6725,17 +6717,25 @@
           "high": 167.765,
           "low": 166.445,
           "close": 167.37,
-          "volume": 5002289
+          "volume": 5023839
+        },
+        {
+          "date": "2026-08-17",
+          "open": 166.45,
+          "high": 167.87,
+          "low": 165.86,
+          "close": 167.05,
+          "volume": 7099819
         }
       ],
       "relative": {
-        "1D": -0.402,
-        "5D": 0.622,
-        "20D": -0.548,
-        "60D": 7.803
+        "1D": 0.282,
+        "5D": -0.778,
+        "20D": 0.777,
+        "60D": 9.3
       },
-      "rotationScore": 20,
-      "rotationState": "Neutral"
+      "rotationScore": 35,
+      "rotationState": "Leadership"
     },
     {
       "ticker": "XLI",
@@ -6744,34 +6744,26 @@
       "bucket": "Industrials",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 186.51,
+      "asOf": "2026-08-17",
+      "close": 186.32,
       "returns": {
-        "1D": 0.388,
-        "5D": 0.718,
-        "20D": 3.957,
-        "60D": 10.531
+        "1D": -0.102,
+        "5D": 0.932,
+        "20D": 4.604,
+        "60D": 9.131
       },
       "trend": {
-        "sma20": 182.757,
-        "sma50": 180.9462,
-        "vs20DMA": 2.054,
-        "vs50DMA": 3.075
+        "sma20": 183.167,
+        "sma50": 181.1494,
+        "vs20DMA": 1.721,
+        "vs50DMA": 2.854
       },
       "volume": {
-        "latest": 3574371,
-        "average20D": 6365675,
-        "ratio20D": 0.562
+        "latest": 5353298,
+        "average20D": 6142106,
+        "ratio20D": 0.872
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 174.24,
-          "high": 174.61,
-          "low": 172.52,
-          "close": 173.62,
-          "volume": 6070834
-        },
         {
           "date": "2026-05-14",
           "open": 174.17,
@@ -7282,16 +7274,24 @@
           "high": 186.88,
           "low": 185.6001,
           "close": 186.51,
-          "volume": 3574371
+          "volume": 3590373
+        },
+        {
+          "date": "2026-08-17",
+          "open": 186.39,
+          "high": 187.39,
+          "low": 186.18,
+          "close": 186.32,
+          "volume": 5353298
         }
       ],
       "relative": {
-        "1D": 0.586,
-        "5D": 0.32,
-        "20D": -0.489,
-        "60D": 4.724
+        "1D": 0.371,
+        "5D": 0.979,
+        "20D": 0.483,
+        "60D": 4.892
       },
-      "rotationScore": 6,
+      "rotationScore": 21,
       "rotationState": "Neutral"
     },
     {
@@ -7301,34 +7301,26 @@
       "bucket": "Energy",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 61.91,
+      "asOf": "2026-08-17",
+      "close": 62.58,
       "returns": {
-        "1D": 1.392,
-        "5D": 7.67,
-        "20D": 7.334,
-        "60D": 1.012
+        "1D": 1.082,
+        "5D": 3.988,
+        "20D": 8.008,
+        "60D": 4.649
       },
       "trend": {
-        "sma20": 59.156,
-        "sma50": 56.9686,
-        "vs20DMA": 4.655,
-        "vs50DMA": 8.674
+        "sma20": 59.388,
+        "sma50": 57.0452,
+        "vs20DMA": 5.375,
+        "vs50DMA": 9.702
       },
       "volume": {
-        "latest": 22728483,
-        "average20D": 28173684,
-        "ratio20D": 0.807
+        "latest": 23468243,
+        "average20D": 27742682,
+        "ratio20D": 0.846
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 57.47,
-          "high": 57.71,
-          "low": 56.96,
-          "close": 57.63,
-          "volume": 22707191
-        },
         {
           "date": "2026-05-14",
           "open": 57.65,
@@ -7839,16 +7831,24 @@
           "high": 62.11,
           "low": 61.25,
           "close": 61.91,
-          "volume": 22728483
+          "volume": 22777742
+        },
+        {
+          "date": "2026-08-17",
+          "open": 62.215,
+          "high": 62.685,
+          "low": 61.785,
+          "close": 62.58,
+          "volume": 23468243
         }
       ],
       "relative": {
-        "1D": 1.59,
-        "5D": 7.272,
-        "20D": 2.888,
-        "60D": -4.795
+        "1D": 1.555,
+        "5D": 4.035,
+        "20D": 3.887,
+        "60D": 0.41
       },
-      "rotationScore": 48,
+      "rotationScore": 53,
       "rotationState": "Leadership"
     },
     {
@@ -7858,34 +7858,26 @@
       "bucket": "Materials",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 52.54,
+      "asOf": "2026-08-17",
+      "close": 52.24,
       "returns": {
-        "1D": 0.44,
-        "5D": -0.605,
-        "20D": 3.978,
-        "60D": 7.137
+        "1D": -0.571,
+        "5D": -1.768,
+        "20D": 4.417,
+        "60D": 5.068
       },
       "trend": {
-        "sma20": 51.7285,
-        "sma50": 51.383,
-        "vs20DMA": 1.569,
-        "vs50DMA": 2.252
+        "sma20": 51.839,
+        "sma50": 51.3954,
+        "vs20DMA": 0.774,
+        "vs50DMA": 1.643
       },
       "volume": {
-        "latest": 7431219,
-        "average20D": 11571260,
-        "ratio20D": 0.642
+        "latest": 7308935,
+        "average20D": 11511703,
+        "ratio20D": 0.635
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 52.13,
-          "high": 52.515,
-          "low": 52.02,
-          "close": 52.06,
-          "volume": 8455420
-        },
         {
           "date": "2026-05-14",
           "open": 52.12,
@@ -8396,16 +8388,24 @@
           "high": 52.645,
           "low": 52.27,
           "close": 52.54,
-          "volume": 7431219
+          "volume": 7479620
+        },
+        {
+          "date": "2026-08-17",
+          "open": 52.35,
+          "high": 52.44,
+          "low": 52.065,
+          "close": 52.24,
+          "volume": 7308935
         }
       ],
       "relative": {
-        "1D": 0.638,
-        "5D": -1.003,
-        "20D": -0.468,
-        "60D": 1.33
+        "1D": -0.098,
+        "5D": -1.721,
+        "20D": 0.296,
+        "60D": 0.829
       },
-      "rotationScore": 0,
+      "rotationScore": -7,
       "rotationState": "Neutral"
     },
     {
@@ -8415,34 +8415,26 @@
       "bucket": "Utilities",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 44.31,
+      "asOf": "2026-08-17",
+      "close": 44.18,
       "returns": {
-        "1D": 0.613,
-        "5D": 1.605,
-        "20D": -1.904,
-        "60D": -0.068
+        "1D": -0.293,
+        "5D": 2.435,
+        "20D": -1.691,
+        "60D": -0.741
       },
       "trend": {
-        "sma20": 44.573,
-        "sma50": 44.8458,
-        "vs20DMA": -0.59,
-        "vs50DMA": -1.195
+        "sma20": 44.535,
+        "sma50": 44.8506,
+        "vs20DMA": -0.797,
+        "vs50DMA": -1.495
       },
       "volume": {
-        "latest": 17022672,
-        "average20D": 20354544,
-        "ratio20D": 0.836
+        "latest": 16350960,
+        "average20D": 20166027,
+        "ratio20D": 0.811
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 44.8,
-          "high": 44.8153,
-          "low": 44.36,
-          "close": 44.67,
-          "volume": 27268577
-        },
         {
           "date": "2026-05-14",
           "open": 44.63,
@@ -8953,16 +8945,24 @@
           "high": 44.41,
           "low": 43.975,
           "close": 44.31,
-          "volume": 17022672
+          "volume": 17154205
+        },
+        {
+          "date": "2026-08-17",
+          "open": 44.2,
+          "high": 44.25,
+          "low": 43.82,
+          "close": 44.18,
+          "volume": 16350960
         }
       ],
       "relative": {
-        "1D": 0.811,
-        "5D": 1.207,
-        "20D": -6.35,
-        "60D": -5.875
+        "1D": 0.18,
+        "5D": 2.482,
+        "20D": -5.812,
+        "60D": -4.98
       },
-      "rotationScore": -58,
+      "rotationScore": -57,
       "rotationState": "Lagging"
     },
     {
@@ -8972,34 +8972,26 @@
       "bucket": "Real Estate",
       "source": "Alpha Vantage",
       "classification": "INFERRED ROTATION",
-      "asOf": "2026-08-14",
-      "close": 45.27,
+      "asOf": "2026-08-17",
+      "close": 44.83,
       "returns": {
-        "1D": 0.332,
-        "5D": 0.645,
-        "20D": -0.33,
-        "60D": 3.027
+        "1D": -0.972,
+        "5D": 0.968,
+        "20D": -0.884,
+        "60D": 0.9
       },
       "trend": {
-        "sma20": 45.157,
-        "sma50": 44.8374,
-        "vs20DMA": 0.25,
-        "vs50DMA": 0.965
+        "sma20": 45.137,
+        "sma50": 44.846,
+        "vs20DMA": -0.68,
+        "vs50DMA": -0.036
       },
       "volume": {
-        "latest": 4519225,
-        "average20D": 5144891,
-        "ratio20D": 0.878
+        "latest": 8394199,
+        "average20D": 5177014,
+        "ratio20D": 1.621
       },
       "history": [
-        {
-          "date": "2026-05-13",
-          "open": 44.23,
-          "high": 44.42,
-          "low": 43.935,
-          "close": 44.21,
-          "volume": 5242514
-        },
         {
           "date": "2026-05-14",
           "open": 44.33,
@@ -9510,17 +9502,25 @@
           "high": 45.32,
           "low": 45.0401,
           "close": 45.27,
-          "volume": 4519225
+          "volume": 4545880
+        },
+        {
+          "date": "2026-08-17",
+          "open": 45.1,
+          "high": 45.15,
+          "low": 44.73,
+          "close": 44.83,
+          "volume": 8394199
         }
       ],
       "relative": {
-        "1D": 0.53,
-        "5D": 0.247,
-        "20D": -4.776,
-        "60D": -2.78
+        "1D": -0.499,
+        "5D": 1.015,
+        "20D": -5.005,
+        "60D": -3.339
       },
-      "rotationScore": -33,
-      "rotationState": "Lagging"
+      "rotationScore": -24,
+      "rotationState": "Neutral"
     }
   ]
 }
