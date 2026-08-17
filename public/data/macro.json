@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-16T05:01:21.207Z",
+  "generatedAt": "2026-08-17T05:21:42.860Z",
   "terminal": "Global Capital Flow Terminal",
   "dataType": "macro",
   "classification": "MACRO",
@@ -26,10 +26,6 @@
       "change": 11388,
       "pctChange": 0.1687,
       "observations": [
-        {
-          "date": "2023-08-16",
-          "value": 8145727
-        },
         {
           "date": "2023-08-23",
           "value": 8139066
@@ -674,10 +670,6 @@
       "pctChange": 3.2368,
       "observations": [
         {
-          "date": "2023-08-16",
-          "value": 384814
-        },
-        {
           "date": "2023-08-23",
           "value": 416031
         },
@@ -1320,10 +1312,6 @@
       "change": 0,
       "pctChange": 0,
       "observations": [
-        {
-          "date": "2023-08-16",
-          "value": 5.33
-        },
         {
           "date": "2023-08-17",
           "value": 5.33
@@ -5716,10 +5704,6 @@
       "pctChange": -1.1905,
       "observations": [
         {
-          "date": "2023-08-16",
-          "value": 4.97
-        },
-        {
           "date": "2023-08-17",
           "value": 4.94
         },
@@ -8727,10 +8711,6 @@
       "pctChange": -1.0684,
       "observations": [
         {
-          "date": "2023-08-16",
-          "value": 4.28
-        },
-        {
           "date": "2023-08-17",
           "value": 4.3
         },
@@ -11737,10 +11717,6 @@
       "change": 0.03,
       "pctChange": 6.25,
       "observations": [
-        {
-          "date": "2023-08-16",
-          "value": -0.69
-        },
         {
           "date": "2023-08-17",
           "value": -0.64
@@ -14752,10 +14728,6 @@
       "change": -0.4464,
       "pctChange": -0.3735,
       "observations": [
-        {
-          "date": "2023-08-16",
-          "value": 120.3551
-        },
         {
           "date": "2023-08-17",
           "value": 120.5242
