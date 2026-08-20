@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-19T05:04:28.679Z",
+  "generatedAt": "2026-08-20T05:06:11.499Z",
   "terminal": "Global Capital Flow Terminal",
   "dataType": "macro",
   "classification": "MACRO",
@@ -1306,16 +1306,12 @@
       "source": "FRED",
       "sourceInstitution": "Federal Reserve",
       "sourceSeriesId": "DFF",
-      "asOf": "2026-08-17",
+      "asOf": "2026-08-18",
       "latest": 3.63,
       "previous": 3.63,
       "change": 0,
       "pctChange": 0,
       "observations": [
-        {
-          "date": "2023-08-19",
-          "value": 5.33
-        },
         {
           "date": "2023-08-20",
           "value": 5.33
@@ -5691,6 +5687,10 @@
         {
           "date": "2026-08-17",
           "value": 3.63
+        },
+        {
+          "date": "2026-08-18",
+          "value": 3.63
         }
       ]
     },
@@ -5705,11 +5705,11 @@
       "source": "FRED",
       "sourceInstitution": "Federal Reserve",
       "sourceSeriesId": "DGS2",
-      "asOf": "2026-08-17",
+      "asOf": "2026-08-18",
       "latest": 4.19,
-      "previous": 4.17,
-      "change": 0.02,
-      "pctChange": 0.4796,
+      "previous": 4.19,
+      "change": 0,
+      "pctChange": 0,
       "observations": [
         {
           "date": "2023-08-21",
@@ -8698,6 +8698,10 @@
         {
           "date": "2026-08-17",
           "value": 4.19
+        },
+        {
+          "date": "2026-08-18",
+          "value": 4.19
         }
       ]
     },
@@ -8712,11 +8716,11 @@
       "source": "FRED",
       "sourceInstitution": "Federal Reserve",
       "sourceSeriesId": "DGS10",
-      "asOf": "2026-08-17",
-      "latest": 4.72,
-      "previous": 4.68,
-      "change": 0.04,
-      "pctChange": 0.8547,
+      "asOf": "2026-08-18",
+      "latest": 4.71,
+      "previous": 4.72,
+      "change": -0.01,
+      "pctChange": -0.2119,
       "observations": [
         {
           "date": "2023-08-21",
@@ -11705,6 +11709,10 @@
         {
           "date": "2026-08-17",
           "value": 4.72
+        },
+        {
+          "date": "2026-08-18",
+          "value": 4.71
         }
       ]
     },
@@ -11719,11 +11727,11 @@
       "source": "FRED",
       "sourceInstitution": "Federal Reserve",
       "sourceSeriesId": "T10Y2Y",
-      "asOf": "2026-08-18",
-      "latest": 0.52,
-      "previous": 0.53,
-      "change": -0.01,
-      "pctChange": -1.8868,
+      "asOf": "2026-08-19",
+      "latest": 0.46,
+      "previous": 0.52,
+      "change": -0.06,
+      "pctChange": -11.5385,
       "observations": [
         {
           "date": "2023-08-21",
@@ -14716,6 +14724,10 @@
         {
           "date": "2026-08-18",
           "value": 0.52
+        },
+        {
+          "date": "2026-08-19",
+          "value": 0.46
         }
       ]
     },
